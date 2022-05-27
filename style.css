@@ -1,5 +1,6 @@
 :root {
     --square: 75px;
+    --click-background: #7ce7ff;
 }
 
 #main {
@@ -25,4 +26,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.clicked {
+    background-color: var(--click-background);
+    color: white;
 }

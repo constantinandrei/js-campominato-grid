@@ -17,6 +17,11 @@ const output = document.getElementById('game');
 const playButton = document.getElementById('play-button');
 const difficolta = document.getElementById('difficolta');
 
+function addBackgroundOnClick (element) {
+    element.addEventListener('click', function() {
+        this.classList.add('clicked')
+    })
+}
 
 function generateSquare (difficolta) {
     let gridX;
@@ -37,6 +42,7 @@ function generateSquare (difficolta) {
         square.append(spanForNumber);
         square.classList.add('square');
         spanForNumber.innerText = `${i}`;
+        addBackgroundOnClick(square);
         output.append(square);
     }
 
