@@ -1,3 +1,7 @@
+:root {
+    --square: 75px;
+}
+
 #main {
     background-color: #7CFFD2;
 }
@@ -12,4 +16,13 @@
 
 #difficolta {
     max-width: 200px;
+}
+
+.square {
+    height: var(--square);
+    width: var(--square);
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

@@ -12,3 +12,37 @@ Quando l’utente clicca su ogni cella, la cella cliccata si colora di azzurro.
 
 
 */
+
+const output = document.getElementById('game');
+const playButton = document.getElementById('play-button');
+const difficolta = document.getElementById('difficolta');
+
+
+function generateSquare (difficolta) {
+    let gridX;
+
+    if (difficolta === '1') {
+        gridX = 10;
+    } else if (difficolta === '2'){
+        gridX = 9;
+    } else if (difficolta === '3'){
+        gridX = 7;
+    }
+
+    output.style.width = `calc(var(--square) * ${gridX})`;
+
+    for (let i = 1; i <= gridX*gridX; i++){
+        const square = document.createElement('div');
+        const spanForNumber = document.createElement('span');
+        square.append(spanForNumber);
+        square.classList.add('square');
+        spanForNumber.innerText = `${i}`;
+        output.append(square);
+    }
+
+}
+
+playButton.addEventListener('click', function(){
+    output.innerHTML = '';
+    generateSquare(difficolta.value);
+})
