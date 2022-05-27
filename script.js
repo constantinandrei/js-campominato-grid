@@ -19,7 +19,7 @@ const difficolta = document.getElementById('difficolta');
 
 function addBackgroundOnClick (element) {
     element.addEventListener('click', function() {
-        this.classList.add('clicked')
+        this.classList.add('clicked');
     })
 }
 
@@ -41,6 +41,9 @@ function generateSquare (difficolta) {
         const spanForNumber = document.createElement('span');
         square.append(spanForNumber);
         square.classList.add('square');
+        square.classList.add('animate__animated');
+        square.classList.add('animate__backInRight');
+        square.style.animationDelay = `${20 * i}ms`
         spanForNumber.innerText = `${i}`;
         addBackgroundOnClick(square);
         output.append(square);
@@ -52,3 +55,4 @@ playButton.addEventListener('click', function(){
     output.innerHTML = '';
     generateSquare(difficolta.value);
 })
+

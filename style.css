@@ -31,4 +31,5 @@
 .clicked {
     background-color: var(--click-background);
     color: white;
+    overflow: visible;
 }
